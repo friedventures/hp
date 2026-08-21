@@ -1,0 +1,111 @@
+/* Fried Ventures GmbH — shared styles. System fonts only, light theme, AAA contrast. */
+
+:root {
+  --paper: #fbfaf7;
+  --paper-deep: #f0eee7;
+  --ink: #191d18;
+  --ink-soft: #3c423a;
+  --pine: #14382a;
+  --rule: #d5d2c8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.06rem;
+  line-height: 1.7;
+}
+
+h1, h2, h3, .brand {
+  font-family: "Iowan Old Style", "Palatino Nova", Palatino, "Book Antiqua", Georgia, serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.wrap { max-width: 66rem; margin: 0 auto; padding: 0 1.4rem; }
+
+/* Header */
+header.site { border-bottom: 1px solid var(--rule); background: var(--paper); }
+header.site .wrap {
+  display: flex; align-items: baseline; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; padding-top: 1.4rem; padding-bottom: 1.3rem;
+}
+.brand { font-size: 1.25rem; color: var(--ink); text-decoration: none; }
+.brand span { color: var(--pine); }
+nav.top { display: flex; gap: 1.6rem; flex-wrap: wrap; }
+nav.top a {
+  color: var(--ink-soft); text-decoration: none; font-size: 0.94rem;
+  letter-spacing: 0.04em;
+}
+nav.top a:hover, nav.top a:focus-visible { color: var(--ink); text-decoration: underline; text-underline-offset: 4px; }
+a:focus-visible { outline: 3px solid var(--pine); outline-offset: 3px; }
+
+/* Kicker labels */
+.kicker {
+  font-size: 0.78rem; letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--pine); font-weight: 650; margin: 0 0 0.9rem;
+}
+
+/* Hero */
+.hero { padding: 5.5rem 0 4.8rem; background: var(--paper); }
+.hero h1 {
+  font-size: clamp(2.1rem, 4.6vw, 3.4rem);
+  line-height: 1.14; margin: 0 0 1.4rem; max-width: 24ch;
+  text-wrap: balance;
+}
+.hero p { font-size: 1.22rem; color: var(--ink-soft); max-width: 52ch; margin: 0; }
+
+/* Sections: editorial two-column */
+section { border-top: 1px solid var(--rule); padding: 3.8rem 0; }
+.cols { display: grid; grid-template-columns: 15rem 1fr; gap: 2.5rem; }
+@media (max-width: 44rem) { .cols { grid-template-columns: 1fr; gap: 1rem; } }
+.cols h2 { font-size: 1.45rem; margin: 0; line-height: 1.3; }
+.cols .body { max-width: 44rem; }
+.body p { margin: 0 0 1.05rem; }
+.body p:last-child { margin-bottom: 0; }
+
+/* Service list */
+dl.services { margin: 0; }
+dl.services > div { padding: 1.25rem 0; border-bottom: 1px solid var(--rule); }
+dl.services > div:first-child { padding-top: 0.2rem; }
+dl.services > div:last-child { border-bottom: 0; padding-bottom: 0; }
+dl.services dt {
+  font-family: "Iowan Old Style", "Palatino Nova", Palatino, "Book Antiqua", Georgia, serif;
+  font-size: 1.18rem; font-weight: 600; margin-bottom: 0.35rem;
+}
+dl.services dd { margin: 0; color: var(--ink-soft); }
+
+/* Facts strip */
+.facts { display: flex; gap: 2.8rem; flex-wrap: wrap; margin-top: 2rem; }
+.facts div { font-size: 0.97rem; }
+.facts strong { display: block; font-size: 1.05rem; color: var(--ink); font-weight: 650; }
+.facts span { color: var(--ink-soft); }
+
+/* Contact */
+address { font-style: normal; line-height: 1.85; }
+address a { color: var(--pine); }
+
+/* Legal pages */
+main.legal { padding: 3.6rem 0 4.5rem; }
+main.legal .wrap { max-width: 46rem; }
+main.legal h1 { font-size: 2rem; margin: 0 0 2rem; }
+main.legal h2 { font-size: 1.12rem; margin: 2rem 0 0.4rem; }
+main.legal p, main.legal ul { margin: 0 0 1rem; color: var(--ink); }
+main.legal ul { padding-left: 1.2rem; }
+main.legal a { color: var(--pine); }
+
+/* Footer */
+footer.site { border-top: 1px solid var(--rule); background: var(--paper-deep); }
+footer.site .wrap {
+  display: flex; justify-content: space-between; gap: 1.2rem; flex-wrap: wrap;
+  padding-top: 1.8rem; padding-bottom: 2.4rem;
+  font-size: 0.93rem; color: var(--ink-soft);
+}
+footer.site a { color: var(--ink-soft); }
+footer.site a:hover, footer.site a:focus-visible { color: var(--ink); }
